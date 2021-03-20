@@ -159,7 +159,7 @@ where the value of `reported_replica_count` is the number of nodes that store th
 ### 3.4 NFT file retrieval and access
 The NFT trading platform provides [IPFS Getway](https://docs.ipfs.io/concepts/ipfs-gateway/#gateway-types) services, and it also integrates [Public IPFS Gateway](https://ipfs.github .io/public-gateway-checker/) services so that each NFT file can be accessed through a link that contains CID information. The front-end of the NFT trading platform builds on these links to present to users the multimedia information of the NFT.
 
-For example, the NFT file: `Firecloud.png` can be accessed through the following ipfs public Gateway url:
+For example, the NFT file: `FireCloud.png` can be accessed through the following ipfs public Gateway url:
 ```url
 https://ipfs.io/ipfs/QmbLmgLUR1VZNpttojd752fyng8Bz3ZbPqabQ76MVLXT7P
 ```
