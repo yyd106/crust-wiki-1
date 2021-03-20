@@ -13,14 +13,14 @@ NFT assets, like artworks and collectibles which come to public eyes through mul
 2. The term "NFT files" is used to mean the multimedia files of NFT assets in this article.
 
 ## 2. Process overview
-The NFT trading platform serves the storage needs of NFT files by integrating Crust and IPFS. The entire solution can be divided into four steps:
+The NFT exchange serves the storage needs of NFT files by integrating Crust and IPFS. The entire solution can be divided into four steps:
 1. Import NFT files into IPFS;
 
 2. Store and distribute NFT files through Crust Network;
 
 3. Monitor the storage status of NFT files in Crust Network.
 
-4. Users access NFT files in the NFT trading platform.
+4. Users access NFT files in the NFT exchange.
 
 ## 3. Detailed process
 ### 3.1 Import NFT files into IPFS
@@ -46,13 +46,13 @@ Once NFT files are uploaded into IPFS Network, we need the Crust Network nodes t
 
 #### 3.2.1 Install dependencies
 
-The NFT trading platform installs dependencies pertaining to Crust.
+The NFT exchange installs dependencies pertaining to Crust.
 - [@crustio/type-definitions](https://github.com/crustio/crust.js) customized types of data pertaining to Crust Network
 - [@polkadot/api](https://github.com/polkadot-js/api)  promise-style interface provided by the polkadot api library for performing related actions on Crust chain
 
 #### 3.2.2 Initialize API instance
 
-The NFT trading platform initializes the `api`  instance on the server side so that it can interact with Crust Network. 
+The NFT exchange initializes the `api`  instance on the server side so that it can interact with Crust Network. 
 
 ```typescript
 import { ApiPromise, WsProvider } from '@polkadot/api';
@@ -70,7 +70,7 @@ const api = new ApiPromise({
 
 #### 3.2.3 Set on-chain identity
 
-The NFT trading platform needs to obtain  `KeyringPair` on the chain to be able to send order transactions. It can be generated from the seed files of an account:
+The NFT exchange needs to obtain  `KeyringPair` on the chain to be able to send order transactions. It can be generated from the seed files of an account:
 
 ```typescript
 /* eslint-disable node/no-extraneous-import */
@@ -89,7 +89,7 @@ const krp = kr.addFromUri(seeds);
 ```
 
 #### 3.2.4 Initiate a storage order on Crust Network
-The NFT trading platform initiates a storage order by integrating the following code, where `fileSize` is the "Size" obtained from step 3.1.
+The NFT exchange initiates a storage order by integrating the following code, where `fileSize` is the "Size" obtained from step 3.1.
 
 ```typescript
 /**
@@ -117,7 +117,7 @@ A large number of nodes in the Crust network will obtain the corresponding NFT f
 
 
 ### 3.3 Monitor the storage status of NFT files in Crust Network
-NFT trading platform queries the storage status information of corresponding NFT files by integrating the following code.
+NFT exchange queries the storage status information of corresponding NFT files by integrating the following code.
 ```typescript
 /**
  * Get on-chain order information about files
@@ -157,7 +157,7 @@ where the value of `reported_replica_count` is the number of nodes that store th
 ![fire_cloud](https://crust-data.oss-cn-shanghai.aliyuncs.com/wiki/build/fire_cloud.png)
 
 ### 3.4 NFT file retrieval and access
-The NFT trading platform provides [IPFS Getway](https://docs.ipfs.io/concepts/ipfs-gateway/#gateway-types) services, and it also integrates [Public IPFS Gateway](https://ipfs.github .io/public-gateway-checker/) services so that each NFT file can be accessed through a link that contains CID information. The front-end of the NFT trading platform builds on these links to present to users the multimedia information of the NFT.
+The NFT exchange provides [IPFS Getway](https://docs.ipfs.io/concepts/ipfs-gateway/#gateway-types) services, and it also integrates [Public IPFS Gateway](https://ipfs.github .io/public-gateway-checker/) services so that each NFT file can be accessed through a link that contains CID information. The front-end of the NFT exchange builds on these links to present to users the multimedia information of the NFT.
 
 For example, the NFT file: `FireCloud.png` can be accessed through the following ipfs public Gateway url:
 ```url
