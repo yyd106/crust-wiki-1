@@ -136,4 +136,4 @@ For order status, please go back to [1.4 Checking order status](#14-Checking ord
 As long as you know the CID of a file, you can retrieve files through [Crust Apps](https://apps.crust.network/#/storage/files). For details, please refer to [1.5 Retrieving files](#15-Retrieving files). You may also use [IPFS file retrieval](https://dweb-primer.ipfs.io/avenues-for-access/retrieve-from-peer).
 
 ## 3. Developing storage features based on Crust SDK
-Coming soon.
+Check Crust SDK Guidance [here](https://wiki.crust.network/docs/en/buildCrustKits)
